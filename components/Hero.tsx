@@ -17,6 +17,7 @@ Find, book, or rent a car - quickly an easily
 </p>
 
 <CustomButton
+btnType='button'
 title="Explore Cars"
 containerStyles="bg-primary-blue text-white rounded-full mt-10"
 handleClick={handleScroll}
