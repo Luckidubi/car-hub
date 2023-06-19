@@ -3,7 +3,6 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 import { useState } from "react";
-import { SourceTextModule } from "vm";
 import SearchManufacturer from "./SearchManufacturer";
 
 const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
