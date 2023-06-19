@@ -6,12 +6,12 @@ export interface CustomButtonProps {
   handleClick?: MouseEventHandler<HTMLButtonElement>;
   textStyles?: string;
   rightIcon?: string;
-  isDisabled?: boolean
+  isDisabled?: boolean;
 }
 
 export interface SearchManufacturerProps {
-  manufacturer: string;
-  setManuFacturer: (manufacturer: string) => void;
+  selected: string;
+  setSelected: (manufacturer: string) => void;
 }
 
 export interface CarProps {
@@ -47,17 +47,24 @@ export interface FilterProps {
   fuel?: string;
 }
 
-export interface OptionProps{
-  title:string
-  value:string
+export interface OptionProps {
+  title: string;
+  value: string;
 }
-export interface CustomFilterProps{
-  title: string
-  options: OptionProps[]
+export interface CustomFilterProps<T> {
+  title: string;
+  options: OptionProps[];
+  setFilter: (filter: T) => void;
+}
 
+export interface ShowMoreProps {
+  pageNumber: number;
+  isNext: boolean;
+  setLimit: (limit:number)=> void
+}
+export interface SearchBarProps {
+  setManufacturer: (manufacturer: string) => void;
+  setModel: (model: string) => void;
 }
 
-export interface ShowMoreProps{
-  pageNumber: number
-  isNext: boolean
-}
+export type CarState = CarProps[] & { message?: string };

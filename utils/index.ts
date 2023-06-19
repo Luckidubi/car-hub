@@ -1,6 +1,5 @@
 import { CarProps, FilterProps } from "@/types";
 
-const url = "https://cars-by-api-ninjas.p.rapidapi.com/v1/cars";
 
 export async function fetchCars(filters: FilterProps) {
   const {manufacturer, year, model, limit, fuel} = filters;
