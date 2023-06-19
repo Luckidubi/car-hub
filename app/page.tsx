@@ -8,9 +8,7 @@ import { fetchCars } from "@/utils";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-
 export default function Home() {
-
   const [allCars, setAllCars] = useState<CarState>([]);
 
   const [loading, setLoading] = useState(false);
@@ -43,7 +41,6 @@ export default function Home() {
     getCars();
   }, [fuel, year, limit, manufacturer, model]);
 
-  const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
   return (
     <main className="overflow-hidden">
       <Hero />
@@ -75,16 +72,16 @@ export default function Home() {
               {loading && (
                 <div className="mt-16 flex-center w-full">
                   <Image
-                  src="/my-loader.svg"
-                  alt="loader"
-                  width={50}
-                  height={50}
-                  className="object-contain"
+                    src="/my-loader.svg"
+                    alt="loader"
+                    width={50}
+                    height={50}
+                    className="object-contain"
                   />
                 </div>
               )}
               <ShowMore
-                pageNumber={limit  / 10}
+                pageNumber={limit / 10}
                 isNext={limit > allCars.length}
                 setLimit={setLimit}
               />
